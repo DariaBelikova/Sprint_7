@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: edu.praktikum.sprint7.CourierLoginTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.609 s - in edu.praktikum.sprint7.CourierLoginTests

@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: edu.praktikum.sprint7.CourierTests
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.305 s <<< FAILURE! - in edu.praktikum.sprint7.CourierTests
+checkCourierResponseWithoutFieldBodyTest(edu.praktikum.sprint7.CourierTests)  Time elapsed: 0.214 s  <<< FAILURE!
+java.lang.AssertionError: Неверный статус код expected:<200> but was:<404>
+	at edu.praktikum.sprint7.CourierTests.tearDown(CourierTests.java:92)
+
