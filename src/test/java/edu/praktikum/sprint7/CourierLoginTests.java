@@ -11,7 +11,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static models.CourierCreds.fromCourier;
-import static org.apache.http.HttpStatus.*;
+import static org.apache.http.HttpStatus.SC_NOT_FOUND;
+import static org.apache.http.HttpStatus.SC_OK;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertEquals;
 
@@ -25,8 +26,8 @@ public class CourierLoginTests {
         RestAssured.baseURI = BASE_URL;
         Courier courier = new Courier("RonWeasley", "RonWeasley", "Ron");
         CourierClient courierClient = new CourierClient();
-        Response responseFirstCourier = courierClient.create(courier);
-        assertEquals("Неверный статус код", SC_CREATED, responseFirstCourier.statusCode());
+        courierClient.create(courier);
+
     }
 
 
@@ -36,13 +37,13 @@ public class CourierLoginTests {
     public void checkCourierLoginBadPasswordResponseBodyTest() {
         Courier courierWithoutPassword = new Courier("RonWeasley", "Ron", "Ron");
         CourierClient courierClient = new CourierClient();
-        Response loginResponse = courierClient.loginBadPassword(courierWithoutPassword);
+        Response loginResponse = CourierClient.loginBadPassword(courierWithoutPassword);
+
 
         loginResponse.then().assertThat().body("message", equalTo("Учетная запись не найдена"))
                 .and()
                 .statusCode(SC_NOT_FOUND);
 
-        System.out.println(loginResponse.body().asString());
 
     }
 

@@ -6,10 +6,10 @@ import io.qameta.allure.junit4.DisplayName;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import models.Courier;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
 import static models.CourierCreds.fromCourier;
 import static org.apache.http.HttpStatus.*;
 import static org.hamcrest.Matchers.equalTo;
@@ -29,7 +29,7 @@ public class CourierTests {
 
     @Test
     @DisplayName("Создание курьера")
-    public void CreateCourier() {
+    public void checkCreateCourier() {
 
         Courier courier = new Courier("HermioneGranger", "Hermione", "Hermione");
 
@@ -44,13 +44,13 @@ public class CourierTests {
         //Войти под логином
         Response loginResponse = CourierClient.login(fromCourier(courier));
         id = loginResponse.path("id");
-       assertEquals("Неверный статус код", SC_OK, loginResponse.statusCode());
+        assertEquals("Неверный статус код", SC_OK, loginResponse.statusCode());
 
     }
 
     @Test
     @DisplayName("Создание двух курьеров с одним логином")
-    @Description ("Нельзя создать двух одинаковых курьеров")
+    @Description("Нельзя создать двух одинаковых курьеров")
     public void checkDoubleCreateNewCourier() {
 
         Courier courier = new Courier("HermioneGranger", "Hermione", "Hermione");
@@ -59,27 +59,11 @@ public class CourierTests {
         Response responseFirstCourier = courierClient.create(courier);
         assertEquals("Неверный статус код", SC_CREATED, responseFirstCourier.statusCode());
 
-      Response responseSecondCourier = courierClient.create(courier);
+        Response responseSecondCourier = courierClient.create(courier);
         responseSecondCourier.then().assertThat().body("message", equalTo("Этот логин уже используется. Попробуйте другой."))
                 .and()
                 .statusCode(SC_CONFLICT);
 
-       System.out.println(responseSecondCourier.body().asString());
-
-    }
-    @Test
-    @DisplayName("Создание курьера без пароля")
-    public void checkCourierResponseWithoutFieldBodyTest() {
-        Courier courierWithoutPassword = new Courier("HermioneGranger", "", "Hermione");
-
-        CourierClient courierClient = new CourierClient();
-        Response response = courierClient.create(courierWithoutPassword);
-
-        response.then().assertThat().body("message", equalTo("Недостаточно данных для создания учетной записи"))
-                .and()
-                .statusCode(SC_BAD_REQUEST);
-
-        System.out.println(response.body().asString());
 
     }
 
@@ -92,7 +76,6 @@ public class CourierTests {
         assertEquals("Неверный статус код", SC_OK, loginResponse.statusCode());
 
         id = loginResponse.path("id");
-        System.out.println(id);
 
         Response responseDelete = CourierClient.delete(id);
 

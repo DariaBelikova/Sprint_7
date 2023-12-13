@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="edu.praktikum.sprint7.CourierTests" time="1.305" tests="3" errors="0" skipped="0" failures="1">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="edu.praktikum.sprint7.CourierTests" time="1.179" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -17,7 +17,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="RU"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Amazon Corretto\jdk11.0.20_9\bin"/>
-    <property name="sun.java.command" value="C:\Users\espri\AppData\Local\Temp\surefire1362322198887683601\surefirebooter9421610200810453028.jar C:\Users\espri\AppData\Local\Temp\surefire1362322198887683601 2023-12-10T22-08-54_372-jvmRun1 surefire11172955253308912433tmp surefire_08249232844932965292tmp"/>
+    <property name="sun.java.command" value="C:\Users\espri\AppData\Local\Temp\surefire3538051612386963033\surefirebooter10418352968002844127.jar C:\Users\espri\AppData\Local\Temp\surefire3538051612386963033 2023-12-13T15-56-02_591-jvmRun1 surefire13471382553554994624tmp surefire_08854572563744706718tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\espri\OneDrive\Desktop\ЯндексПрактикум\Java\Test_Courier\target\test-classes;C:\Users\espri\OneDrive\Desktop\ЯндексПрактикум\Java\Test_Courier\target\classes;C:\Users\espri\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\espri\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\espri\.m2\repository\io\rest-assured\rest-assured\5.3.0\rest-assured-5.3.0.jar;C:\Users\espri\.m2\repository\org\apache\groovy\groovy\4.0.6\groovy-4.0.6.jar;C:\Users\espri\.m2\repository\org\apache\groovy\groovy-xml\4.0.6\groovy-xml-4.0.6.jar;C:\Users\espri\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\espri\.m2\repository\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;C:\Users\espri\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\espri\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\espri\.m2\repository\org\apache\httpcomponents\httpmime\4.5.13\httpmime-4.5.13.jar;C:\Users\espri\.m2\repository\org\hamcrest\hamcrest\2.1\hamcrest-2.1.jar;C:\Users\espri\.m2\repository\org\ccil\cowan\tagsoup\tagsoup\1.2.1\tagsoup-1.2.1.jar;C:\Users\espri\.m2\repository\io\rest-assured\json-path\5.3.0\json-path-5.3.0.jar;C:\Users\espri\.m2\repository\org\apache\groovy\groovy-json\4.0.6\groovy-json-4.0.6.jar;C:\Users\espri\.m2\repository\io\rest-assured\rest-assured-common\5.3.0\rest-assured-common-5.3.0.jar;C:\Users\espri\.m2\repository\io\rest-assured\xml-path\5.3.0\xml-path-5.3.0.jar;C:\Users\espri\.m2\repository\org\apache\commons\commons-lang3\3.11\commons-lang3-3.11.jar;C:\Users\espri\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar;C:\Users\espri\.m2\repository\io\qameta\allure\allure-junit4\2.21.0\allure-junit4-2.21.0.jar;C:\Users\espri\.m2\repository\io\qameta\allure\allure-java-commons\2.21.0\allure-java-commons-2.21.0.jar;C:\Users\espri\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar;C:\Users\espri\.m2\repository\io\qameta\allure\allure-model\2.21.0\allure-model-2.21.0.jar;C:\Users\espri\.m2\repository\io\qameta\allure\allure-rest-assured\2.21.0\allure-rest-assured-2.21.0.jar;C:\Users\espri\.m2\repository\io\qameta\allure\allure-attachments\2.21.0\allure-attachments-2.21.0.jar;C:\Users\espri\.m2\repository\org\freemarker\freemarker\2.3.31\freemarker-2.3.31.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -34,7 +34,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\espri\AppData\Local\Temp\surefire1362322198887683601\surefirebooter9421610200810453028.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\espri\AppData\Local\Temp\surefire3538051612386963033\surefirebooter10418352968002844127.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.20.1+9-LTS"/>
@@ -63,13 +63,6 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="checkDoubleCreateNewCourier" classname="edu.praktikum.sprint7.CourierTests" time="0.528"/>
-  <testcase name="CreateCourier" classname="edu.praktikum.sprint7.CourierTests" time="0.555"/>
-  <testcase name="checkCourierResponseWithoutFieldBodyTest" classname="edu.praktikum.sprint7.CourierTests" time="0.214">
-    <failure message="Неверный статус код expected:&lt;200&gt; but was:&lt;404&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Неверный статус код expected:<200> but was:<404>
-	at edu.praktikum.sprint7.CourierTests.tearDown(CourierTests.java:92)
-]]></failure>
-    <system-out><![CDATA[{"code":400,"message":"Недостаточно данных для создания учетной записи"}
-]]></system-out>
-  </testcase>
+  <testcase name="checkDoubleCreateNewCourier" classname="edu.praktikum.sprint7.CourierTests" time="0.595"/>
+  <testcase name="checkCreateCourier" classname="edu.praktikum.sprint7.CourierTests" time="0.581"/>
 </testsuite>

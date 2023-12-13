@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: edu.praktikum.sprint7.OrderListTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.784 s - in edu.praktikum.sprint7.OrderListTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.805 s - in edu.praktikum.sprint7.OrderListTests
