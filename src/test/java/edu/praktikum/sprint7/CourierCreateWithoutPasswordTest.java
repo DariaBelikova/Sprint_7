@@ -28,11 +28,12 @@ public class CourierCreateWithoutPasswordTest {
         CourierClient courierClient = new CourierClient();
         Response response = courierClient.create(courierWithoutPassword);
 
-
-        response.then().assertThat().body("message", equalTo("Недостаточно данных для создания учетной записи"))
+        response.then().assertThat().statusCode(SC_BAD_REQUEST)
                 .and()
-                .statusCode(SC_BAD_REQUEST);
+                .body("message", equalTo("Недостаточно данных для создания учетной записи"));
 
 
     }
+
+
 }

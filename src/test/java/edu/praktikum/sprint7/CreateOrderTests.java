@@ -63,14 +63,14 @@ public class CreateOrderTests {
 
     @Test
     @DisplayName("Проверка выбора цветов самоката")
-    @Description("Можно указть оба цвета, один из уветов или не указывать увет. Метож вернет track.")
+    @Description("Можно указть оба цвета, один из уветов или не указывать увет. Метод вернет track.")
     public void checkOrdersTreckTest() {
         Order order = new Order(firstName, lastName, address, metroStation, phone, dateOrder, deliveryDate, comment);
         OrderClient courierClient = new OrderClient();
         Response createOrder = courierClient.createOrder(order);
 
-        System.out.println("track: " + track);
         assertEquals("Неверный статус код", SC_CREATED, createOrder.statusCode());
+
         track = createOrder.path("track");
 
 

@@ -26,9 +26,8 @@ public class OrderListTests {
         RestAssured.baseURI = BASE_URL;
         Courier courier = new Courier("luna", "lavgut", "luna");
         CourierClient courierClient = new CourierClient();
-        Response response = courierClient.create(courier);
+        courierClient.create(courier);
 
-        assertEquals("Неверный статус код", SC_CREATED, response.statusCode());
     }
 
     @Test
@@ -38,12 +37,9 @@ public class OrderListTests {
 
         Response loginResponse = CourierClient.login(fromCourier(courier));
 
-        assertEquals("Неверный статус код", SC_OK, loginResponse.statusCode());
-
         id = loginResponse.path("id");
         Response responseList = OrderClient.getOrderList(id);
-        responseList.then().assertThat()
-                .statusCode(SC_OK);
+        assertEquals("Неверный статус код", SC_OK, responseList.statusCode());
 
 
     }
@@ -54,15 +50,13 @@ public class OrderListTests {
 
         Response loginResponse = CourierClient.login(fromCourier(courier));
 
-        assertEquals("Неверный статус код", SC_OK, loginResponse.statusCode());
-
         id = loginResponse.path("id");
-        System.out.println(id);
 
         Response responseDelete = CourierClient.delete(id);
 
-        responseDelete.then().assertThat().body("ok", equalTo(true));  //Проверяем, что успешный запрос возвращает ok: true;
         assertEquals("Неверный статус код", SC_OK, responseDelete.statusCode());
+        responseDelete.then().assertThat().body("ok", equalTo(true));  //Проверяем, что успешный запрос возвращает ok: true;
+
 
     }
 

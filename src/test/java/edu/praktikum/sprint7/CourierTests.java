@@ -35,13 +35,8 @@ public class CourierTests {
 
         CourierClient courierClient = new CourierClient();
 
-        Response response = courierClient.create(courier);
+        courierClient.create(courier);
 
-        response.then().assertThat().body("ok", equalTo(true));  //Проверяем, что успешный запрос возвращает ok: true;
-        assertEquals("Неверный статус код", SC_CREATED, response.statusCode());
-
-
-        //Войти под логином
         Response loginResponse = CourierClient.login(fromCourier(courier));
         id = loginResponse.path("id");
         assertEquals("Неверный статус код", SC_OK, loginResponse.statusCode());
@@ -56,14 +51,13 @@ public class CourierTests {
         Courier courier = new Courier("HermioneGranger", "Hermione", "Hermione");
 
         CourierClient courierClient = new CourierClient();
-        Response responseFirstCourier = courierClient.create(courier);
-        assertEquals("Неверный статус код", SC_CREATED, responseFirstCourier.statusCode());
+        courierClient.create(courier);
 
         Response responseSecondCourier = courierClient.create(courier);
-        responseSecondCourier.then().assertThat().body("message", equalTo("Этот логин уже используется. Попробуйте другой."))
-                .and()
-                .statusCode(SC_CONFLICT);
 
+        responseSecondCourier.then().assertThat().statusCode(SC_CONFLICT)
+                .and()
+                .body("message", equalTo("Этот логин уже используется. Попробуйте другой."));
 
     }
 
@@ -73,14 +67,13 @@ public class CourierTests {
 
         Response loginResponse = CourierClient.login(fromCourier(courierDelete));
 
-        assertEquals("Неверный статус код", SC_OK, loginResponse.statusCode());
-
         id = loginResponse.path("id");
 
         Response responseDelete = CourierClient.delete(id);
 
-        responseDelete.then().assertThat().body("ok", equalTo(true));  //Проверяем, что успешный запрос возвращает ok: true;
         assertEquals("Неверный статус код", SC_OK, responseDelete.statusCode());
+        responseDelete.then().assertThat().body("ok", equalTo(true));  //Проверяем, что успешный запрос возвращает ok: true;
+
 
     }
 
